@@ -1,5 +1,5 @@
 <template>
-    <b-table :data="data">
+    <b-table :data="data" :loading="loading">
         <b-table-column label="Title" v-slot="props">
             {{ props.row.title }}
         </b-table-column>
@@ -20,11 +20,15 @@ export default {
     data() {
         return {
             data: [],
+            loading: true,
         };
     },
     methods: {
         init() {
-            axios.get("/api/home/links").then(({ data }) => (this.data = data));
+            axios.get("/api/home/links").then(({ data }) => {
+                this.data = data;
+                this.loading = false;
+            });
         },
         downloadFile(url) {
             axios.get(url, { responseType: "blob" }).then((response) => {

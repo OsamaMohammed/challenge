@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-table :data="data">
+        <b-table :data="data" :loading="loading">
             <b-table-column label="Description" v-slot="props">
                 <span class="description">{{ props.row.desc }}</span>
             </b-table-column>
@@ -23,12 +23,14 @@ export default {
             data: [],
             showItem: {},
             viewSnippetActive: false,
+            loading: true,
         };
     },
     methods: {
         init() {
             axios.get("/api/home/snippets").then(({ data }) => {
                 this.data = data;
+                this.loading = false;
             });
         },
         showSnippet(item) {
