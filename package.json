@@ -22,5 +22,14 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@types/file-saver": "^2.0.5",
+        "buefy": "^0.9.21",
+        "copy-to-clipboard": "^3.3.1",
+        "file-saver": "^2.0.5",
+        "jodit": "^3.2.55",
+        "jodit-vue": "^2.6.0",
+        "moment": "^2.29.3"
     }
 }
