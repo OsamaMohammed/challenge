@@ -10,7 +10,8 @@
 Run these commands in the project root directory.
 
 ```
-touch databases/database.sqlite
+composer install
+touch database/database.sqlite
 touch .env
 php artisan migrate
 php artisan storage:link
