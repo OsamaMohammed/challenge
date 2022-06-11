@@ -49,7 +49,10 @@ class Snippet extends Model
      */
     public function setCodeAttribute($val)
     {
-        $this->attributes['code'] = XSSCleanerFacade::clean($val);
+        if ($val != null){
+            $val = XSSCleanerFacade::clean($val);
+        }
+        $this->attributes['code'] = $val;
     }
 
     /**
