@@ -2,6 +2,7 @@
 
 ## Notes
 
+- As the requested assignment, this project has integrated VueJs components with blade templates (I do prefer creating a seperate project for VueJs frontend and build it to public folder with simple route inside laravel route).
 - The app uses sqlite database in the config file.
 - Allow write permissions on the folder storage/app/public
 
